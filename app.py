@@ -21,7 +21,7 @@ st.markdown('<p class="main-header">HR Metrics and Analytics</p>', unsafe_allow_
 st.markdown('<p class="sub-header">Advanced Applied Analytics & Workforce Diagnostics | Interactive SLP Platform</p>', unsafe_allow_html=True)
 
 if "chat_history" not in st.session_state:
-st.session_state.chat_history = [
+    st.session_state.chat_history = [
 {"role": "assistant", "content": "Welcome to the HR Metrics & Analytics SLP! I am your AI learning assistant. Ask me anything about the value chain, data governance, flight-risk modelling, or unit assignments."}
  ]
 if "submitted_answers" not in st.session_state:
