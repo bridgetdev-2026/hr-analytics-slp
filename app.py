@@ -50,7 +50,7 @@ st.caption("Ask questions or discuss module content in real time:")
 
 # Embedded Chat Assistant
 for msg in st.session_state.chat_history:
-st.chat_message(msg["role"]).write(msg["content"])
+   st.chat_message(msg["role"]).write(msg["content"])
 
 user_input = st.text_input("Type your question here...", key="sidebar_query")
 if st.button("Send Query") and user_input:
