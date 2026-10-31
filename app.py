@@ -61,11 +61,11 @@ response_placeholder = "Analyzing query against SLP course material..."
 if "coffee" in user_input.lower() or "value chain" in user_input.lower():
     bot_reply = "The HRM Value Chain uses the 'Coffee Journey' analogy: Get (harvesting raw beans/recruitment), Develop & Keep (roasting & grading/L&D and rewards), and Engage (the barista crafting the cup/leadership & culture)."
 elif "poa" in user_input.lower() or "privacy" in user_input.lower():
-bot_reply = "Under POPIA, workforce analytics must enforce data minimisation, explicit employee consent, dataset pseudonymisation, and the 'human-in-the-loop' principle for automated decision-making."
+   bot_reply = "Under POPIA, workforce analytics must enforce data minimisation, explicit employee consent, dataset pseudonymisation, and the 'human-in-the-loop' principle for automated decision-making."
 elif "regression" in user_input.lower() or "flight risk" in user_input.lower():
-bot_reply = "Logistic regression models the binary probability of exit (0=Retain, 1=Exit) using inputs like tenure, compa-ratio, and overtime. An AUC score above 0.75 indicates reliable predictive accuracy."
+   bot_reply = "Logistic regression models the binary probability of exit (0=Retain, 1=Exit) using inputs like tenure, compa-ratio, and overtime. An AUC score above 0.75 indicates reliable predictive accuracy."
 else:
-bot_reply = f"Regarding '{user_input}': In this SLP, always ensure you connect administrative measures to contextualised metrics, diagnostic root causes, and business impact."
+   bot_reply = f"Regarding '{user_input}': In this SLP, always ensure you connect administrative measures to contextualised metrics, diagnostic root causes, and business impact."
 
 st.session_state.chat_history.append({"role": "assistant", "content": bot_reply})
 st.rerun()
@@ -77,7 +77,7 @@ st.info("Target Audience: Working HR Practitioners, Line Managers, and Organisat
 
 col1, col2 = st.columns(2)
 with col1:
-st.markdown("### Core Objectives")
+   st.markdown("### Core Objectives")
 st.markdown("""
 * Shift from Admin to Partner: Shift HRM from administrative reporting to strategic business partnering.
 * Diagnostic Mastery: Apply the 5-step HR Analytics Process Model (Exploration, Examination, Extraction, Evaluation, Extrapolation).
@@ -95,7 +95,7 @@ st.markdown("""
 """)
 
 elif selected_unit == "Unit 1: Foundations & Value Chain":
-st.header("Unit 1: Foundations of Strategic HRM, eHRM and the Value Chain")
+   st.header("Unit 1: Foundations of Strategic HRM, eHRM and the Value Chain")
 
 tab1, tab2, tab3 = st.tabs(["📖 Learning Content", "☕ The Coffee Journey Model", "✍️ Interactive Practical & Auto-Marker"])
 
@@ -154,7 +154,7 @@ Recommendation for Improvement:
 """)
 
 elif selected_unit == "Unit 2: Data Architecture & Governance":
-st.header("Unit 2: Data Architecture, Sources, and Governance")
+   st.header("Unit 2: Data Architecture, Sources, and Governance")
 st.markdown("### Core Topics")
 st.markdown("""
 * Internal vs. External Data: Unifying payroll, performance ratings, and attendance logs via Employee ID.
@@ -176,10 +176,10 @@ st.metric(label="Calculated Cohort Flight-Risk Probability", value=f"{calculated
 if calculated_risk > 65:
     st.error("🚨 HIGH RISK: Unscheduled overtime is severely driving exit probability. Immediate shift-capping recommended.")
 else:
-st.success("🟢 STABLE: Flight risk is within manageable operational thresholds.")
+   st.success("🟢 STABLE: Flight risk is within manageable operational thresholds.")
 
 elif selected_unit == "Unit 4: Diagnostics & Predictive Modelling":
-st.header("Unit 4: Diagnostics, Flight-Risk Scoring & Predictive Analytics")
+   st.header("Unit 4: Diagnostics, Flight-Risk Scoring & Predictive Analytics")
 
 st.subheader("The Predictive Turnover Pipeline")
 st.code("""
@@ -203,10 +203,10 @@ st.subheader(f"Calculated Flight-Risk Score: {risk_score}")
 if risk_score > 0.70:
    st.error("Flagged for Proactive Intervention: High probability of voluntary resignation within 90 days.")
 else:
-st.success("Low Risk: Standard retention monitoring.")
+   st.success("Low Risk: Standard retention monitoring.")
 
 elif selected_unit == "Final Portfolio & Certification":
-st.header("🎓 Final Assessment Submission & Credentialing")
+   st.header("🎓 Final Assessment Submission & Credentialing")
 st.write("Upload or paste your final Written Analytical Report (Annexure A) and HR Scorecard Matrix to generate your digital completion certificate.")
 
 report_text = st.text_area("Paste Final Executive Report / Board Memo:", height=200)
@@ -217,4 +217,4 @@ if len(report_text.strip()) > 100:
 st.success("🎉 Portfolio Successfully Evaluated & Passed!")
 st.info("Certificate Issued: Advanced Certification in HR Metrics & Analytics | Nelson Mandela University")
 else:
-st.warning("Portfolio submission is incomplete. Please submit your full executive report.")
+   st.warning("Portfolio submission is incomplete. Please submit your full executive report.")
