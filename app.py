@@ -1,7 +1,6 @@
 import streamlit as st
 import time
 
-Page Configuration & Styling
 st.set_page_config(
 page_title="HR Metrics & Analytics | Interactive SLP Portal",
 page_icon="📊",
