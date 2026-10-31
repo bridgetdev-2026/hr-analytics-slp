@@ -25,7 +25,7 @@ if "chat_history" not in st.session_state:
 {"role": "assistant", "content": "Welcome to the HR Metrics & Analytics SLP! I am your AI learning assistant. Ask me anything about the value chain, data governance, flight-risk modelling, or unit assignments."}
  ]
 if "submitted_answers" not in st.session_state:
-st.session_state.submitted_answers = {}
+    st.session_state.submitted_answers = {}
 
 with st.sidebar:
 st.image("https://img.icons8.com/color/96/education.png", width=60)
@@ -54,12 +54,12 @@ st.chat_message(msg["role"]).write(msg["content"])
 
 user_input = st.text_input("Type your question here...", key="sidebar_query")
 if st.button("Send Query") and user_input:
-st.session_state.chat_history.append({"role": "user", "content": user_input})
+    st.session_state.chat_history.append({"role": "user", "content": user_input})
 
 # Simulated AI Response Engine (Connectable to Gemini/OpenAI API)
 response_placeholder = "Analyzing query against SLP course material..."
 if "coffee" in user_input.lower() or "value chain" in user_input.lower():
-bot_reply = "The HRM Value Chain uses the 'Coffee Journey' analogy: Get (harvesting raw beans/recruitment), Develop & Keep (roasting & grading/L&D and rewards), and Engage (the barista crafting the cup/leadership & culture)."
+    bot_reply = "The HRM Value Chain uses the 'Coffee Journey' analogy: Get (harvesting raw beans/recruitment), Develop & Keep (roasting & grading/L&D and rewards), and Engage (the barista crafting the cup/leadership & culture)."
 elif "poa" in user_input.lower() or "privacy" in user_input.lower():
 bot_reply = "Under POPIA, workforce analytics must enforce data minimisation, explicit employee consent, dataset pseudonymisation, and the 'human-in-the-loop' principle for automated decision-making."
 elif "regression" in user_input.lower() or "flight risk" in user_input.lower():
@@ -72,7 +72,7 @@ st.rerun()
 
 
 if selected_unit == "Course Overview":
-st.header("📋 Course Overview & Purpose")
+    st.header("📋 Course Overview & Purpose")
 st.info("Target Audience: Working HR Practitioners, Line Managers, and Organisational Leaders seeking to build advanced competencies in workforce analytics.")
 
 col1, col2 = st.columns(2)
@@ -174,7 +174,7 @@ calculated_risk = min(99, max(5, int((overtime_slider * 1.8) + (100 - compa_rati
 
 st.metric(label="Calculated Cohort Flight-Risk Probability", value=f"{calculated_risk}%")
 if calculated_risk > 65:
-st.error("🚨 HIGH RISK: Unscheduled overtime is severely driving exit probability. Immediate shift-capping recommended.")
+    st.error("🚨 HIGH RISK: Unscheduled overtime is severely driving exit probability. Immediate shift-capping recommended.")
 else:
 st.success("🟢 STABLE: Flight risk is within manageable operational thresholds.")
 
@@ -201,7 +201,7 @@ risk_score = round(1 / (1 + 2.718 ** -(-2.1 + (overtime * 0.08) + (promo_months 
 
 st.subheader(f"Calculated Flight-Risk Score: {risk_score}")
 if risk_score > 0.70:
-st.error("Flagged for Proactive Intervention: High probability of voluntary resignation within 90 days.")
+   st.error("Flagged for Proactive Intervention: High probability of voluntary resignation within 90 days.")
 else:
 st.success("Low Risk: Standard retention monitoring.")
 
@@ -213,7 +213,7 @@ report_text = st.text_area("Paste Final Executive Report / Board Memo:", height=
 
 if st.button("Submit Final Portfolio"):
 if len(report_text.strip()) > 100:
-st.balloons()
+   st.balloons()
 st.success("🎉 Portfolio Successfully Evaluated & Passed!")
 st.info("Certificate Issued: Advanced Certification in HR Metrics & Analytics | Nelson Mandela University")
 else:
