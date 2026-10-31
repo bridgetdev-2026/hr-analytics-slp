@@ -8,7 +8,6 @@ layout="wide",
 initial_sidebar_state="expanded"
 )
 
-Custom Styling
 st.markdown("""
 <style>
 .main-header { font-size:2.2rem; color:#0F2C59; font-weight:700; margin-bottom:0px; }
@@ -18,11 +17,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-Application Header
 st.markdown('<p class="main-header">HR Metrics and Analytics</p>', unsafe_allow_html=True)
 st.markdown('<p class="sub-header">Advanced Applied Analytics & Workforce Diagnostics | Interactive SLP Platform</p>', unsafe_allow_html=True)
 
-Session State Initialisation
 if "chat_history" not in st.session_state:
 st.session_state.chat_history = [
 {"role": "assistant", "content": "Welcome to the HR Metrics & Analytics SLP! I am your AI learning assistant. Ask me anything about the value chain, data governance, flight-risk modelling, or unit assignments."}
@@ -30,7 +27,6 @@ st.session_state.chat_history = [
 if "submitted_answers" not in st.session_state:
 st.session_state.submitted_answers = {}
 
-Sidebar Navigation & AI Assistant
 with st.sidebar:
 st.image("https://img.icons8.com/color/96/education.png", width=60)
 st.title("SLP Navigation")
@@ -74,7 +70,6 @@ bot_reply = f"Regarding '{user_input}': In this SLP, always ensure you connect a
 st.session_state.chat_history.append({"role": "assistant", "content": bot_reply})
 st.rerun()
 
-MAIN CONTENT DISPLAY
 
 if selected_unit == "Course Overview":
 st.header("📋 Course Overview & Purpose")
