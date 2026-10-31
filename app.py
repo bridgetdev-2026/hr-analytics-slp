@@ -28,7 +28,7 @@ if "submitted_answers" not in st.session_state:
     st.session_state.submitted_answers = {}
 
 with st.sidebar:
-st.image("https://img.icons8.com/color/96/education.png", width=60)
+   st.image("https://img.icons8.com/color/96/education.png", width=60)
 st.title("SLP Navigation")
 
 selected_unit = st.radio(
@@ -85,7 +85,7 @@ st.markdown("""
 * Executive Delivery: Translate statistical outputs into board-level strategic memos and scorecards.
 """)
 with col2:
-st.markdown("### Course Structure")
+   st.markdown("### Course Structure")
 st.markdown("""
 * Unit 1: Foundations of Strategic HRM, eHRM & Value Chain
 * Unit 2: Data Architecture, Sources & POPIA Governance
@@ -100,7 +100,7 @@ st.header("Unit 1: Foundations of Strategic HRM, eHRM and the Value Chain")
 tab1, tab2, tab3 = st.tabs(["📖 Learning Content", "☕ The Coffee Journey Model", "✍️ Interactive Practical & Auto-Marker"])
 
 with tab1:
-st.subheader("1.4 Unpacking the Terminology")
+   st.subheader("1.4 Unpacking the Terminology")
 st.markdown("""
 * Measures: Standalone quantitative counts without denominator or context (e.g., Total Headcount = 1,250).
 * Metrics: Contextualised ratios evaluated against baselines or benchmarks (e.g., Turnover Rate = 14.5%).
@@ -116,32 +116,32 @@ st.markdown("""
 """)
 
 with tab2:
-st.subheader("The HRM Value Chain: The Coffee Journey Analogy")
+   st.subheader("The HRM Value Chain: The Coffee Journey Analogy")
 st.write("Value is added at every single stage of the supply chain, transforming raw human potential into ultimate organizational performance:")
 
 col_a, col_b, col_c = st.columns(3)
 with col_a:
-st.success("1. GET\n*(Harvesting Raw Beans)")
+   st.success("1. GET\n*(Harvesting Raw Beans)")
 st.markdown("- Talent Planning\n- Targeted Recruitment\n- Strategic Onboarding")
 with col_b:
-st.warning("2. DEVELOP & KEEP\n(Roasting & Grading)")
+   st.warning("2. DEVELOP & KEEP\n(Roasting & Grading)")
 st.markdown("- Learning & Development\n- Performance Calibration\n- Total Rewards & Remuneration")
 with col_c:
-st.info("3. ENGAGE\n(The Skilled Barista)*")
+   st.info("3. ENGAGE\n(The Skilled Barista)*")
 st.markdown("- Empathetic Leadership\n- Psychological Safety\n- Culture & Transformation")
 
 with tab3:
-st.subheader("Formative Checkpoint: Executive Pitch")
+   st.subheader("Formative Checkpoint: Executive Pitch")
 st.write("Draft a 150-200 word executive pitch proposing an HR analytics project at your organization. Ensure you reference at least one Best Practice Principle and acknowledge a major constraint with a mitigation plan.")
 
 user_pitch = st.text_area("Write your response here:", height=150, key="pitch_input")
 
 if st.button("Submit for Automated AI Marking", key="mark_unit1"):
 if len(user_pitch.strip()) < 50:
-st.warning("Please write a complete response before submitting.")
+   st.warning("Please write a complete response before submitting.")
 else:
 with st.spinner("AI Marker evaluating against criteria..."):
-time.sleep(1.5)
+   time.sleep(1.5)
 st.subheader("🎯 Automated Assessment Feedback")
 st.metric("Score", "85 / 100", "Passed")
 st.markdown("""
@@ -189,10 +189,10 @@ st.code("""
 st.subheader("Practical Flight-Risk Calculator")
 col1, col2 = st.columns(2)
 with col1:
-tenure = st.number_input("Tenure (Months in current role):", 1, 120, 38)
+   tenure = st.number_input("Tenure (Months in current role):", 1, 120, 38)
 overtime = st.number_input("Unscheduled Overtime (Hours/Month):", 0, 80, 42)
 with col2:
-promo_months = st.number_input("Months Since Last Promotion:", 0, 60, 40)
+   promo_months = st.number_input("Months Since Last Promotion:", 0, 60, 40)
 coaching = st.selectbox("Managerial Coaching Received in last 12 months?", ["Yes", "No"])
 
 # Logistic Regression Logic Simulation
