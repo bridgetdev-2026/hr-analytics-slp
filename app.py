@@ -6,7 +6,7 @@ import plotly.express as px
 # Page Configuration & Styling
 st.set_page_config(
     page_title="HR Metrics & Analytics SLP Portal",
-    page_icon="📊",i
+    page_icon="📊",
     layout="wide"
 )
 
@@ -19,8 +19,26 @@ st.markdown("---")
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
+# Sidebar Navigation Setup
+st.sidebar.title("Programme Navigation")
+st.sidebar.markdown("**Short Learning Programme Modules**")
+
+selected_unit = st.sidebar.radio(
+    "Navigate to:",
+    [
+        "Programme Overview & Architecture",
+        "Unit 1: Foundations & Value Chain",
+        "Unit 2: Strategic HR Metrics & Calculators",
+        "Unit 3: Workforce Diagnostics & Audit",
+        "AI Assistant & Support"
+    ]
+)
+
+st.sidebar.markdown("---")
+st.sidebar.info("🎓 **Programme Lead:** Department of Human Resource Management, Nelson Mandela University.")
+
 # Module 0: Programme Overview & Architecture
-if selected_unit == "Program Overview & Architecture":
+if selected_unit == "Programme Overview & Architecture":
     st.header("Short Learning Programme Overview & Architecture")
     
     st.markdown("""
@@ -76,7 +94,6 @@ if selected_unit == "Program Overview & Architecture":
     
     st.info("💡 **Navigation Tip:** Use the sidebar menu on the left to navigate between modules and access interactive diagnostic tools.")
 
-https://github.com/bridgetdev-2026/hr-analytics-slp/edit/main/app.py
 elif selected_unit == "Unit 1: Foundations & Value Chain":
     st.header("Unit 1: Foundations & Value Chain")
     st.markdown("### The HR Value Chain Architecture")
@@ -92,7 +109,7 @@ elif selected_unit == "Unit 1: Foundations & Value Chain":
 
 elif selected_unit == "Unit 2: Strategic HR Metrics & Calculators":
     st.header("Unit 2: Strategic HR Metrics & Calculators")
-    st.markdown("### Interactive Labor Turnover Cost Calculator")
+    st.markdown("### Interactive Labour Turnover Cost Calculator")
     
     col1, col2 = st.columns(2)
     with col1:
