@@ -6,7 +6,7 @@ import plotly.express as px
 # Page Configuration & Styling
 st.set_page_config(
     page_title="HR Metrics & Analytics SLP Portal",
-    page_icon="📊",
+    page_icon="📊",i
     layout="wide"
 )
 
@@ -19,32 +19,64 @@ st.markdown("---")
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# Sidebar Navigation
-st.sidebar.header("Navigation & Modules")
-selected_unit = st.sidebar.radio(
-    "Select Learning Unit:",
-    [
-        "Overview & Value Chain",
-        "Unit 1: Foundations & Value Chain",
-        "Unit 2: Strategic HR Metrics & Calculators",
-        "Unit 3: Workforce Diagnostics & Audit",
-        "AI Assistant & Support"
-    ]
-)
-
-# Main Content Display
-if selected_unit == "Overview & Value Chain":
-    st.header("Program Overview")
+# Module 0: Programme Overview & Architecture
+if selected_unit == "Program Overview & Architecture":
+    st.header("Short Learning Programme Overview & Architecture")
+    
+    st.markdown("""
+    <div class="card">
+    <h4>Welcome Delegates</h4>
+    This specialized executive portal serves as your diagnostic workbench, interactive study guide, and analytics interface for the 
+    <b>Short Learning Programme in HR Metrics and Analytics: Advanced Applied Analytics and Workforce Diagnostics</b>. 
+    Designed specifically for South African HR practitioners, senior managers, and organizational leaders, this programme bridges higher 
+    education rigor with practical workplace application to transform human resource management into an evidence-based strategic business driver.
+    </div>
+    """, unsafe_allow_html=True)
+    
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric(label="Total Modules", value="4 Core Units")
+    col2.metric(label="NQF / Level", value="Advanced / Executive")
+    col3.metric(label="Diagnostic Tools", value="Embedded (ZAR)")
+    col4.metric(label="Focus Area", value="Workplace Flourishing")
+    
+    st.markdown("---")
+    
+    st.subheader("1. Programme Purpose & Strategic Rationale")
     st.write(
-        "Welcome to the interactive executive portal for HR Metrics and Analytics. "
-        "Use the sidebar navigation to explore calculation tools, diagnostic frameworks, and course modules."
+        "In modern African and global enterprise contexts, HR professionals are increasingly required to demonstrate the tangible strategic and "
+        "financial impact of human capital investments. This programme provides the analytical tools, governance frameworks, and diagnostic "
+        "methodologies necessary to evaluate human capital metrics, identify systemic workforce risks, and promote humanised, sustainable workplace flourishing."
     )
     
-    col1, col2, col3 = st.columns(3)
-    col1.metric(label="Core Modules", value="4 Units")
-    col2.metric(label="Diagnostic Tools", value="Interactive")
-    col3.metric(label="Target Audience", value="HR Practitioners & Leaders")
+    st.subheader("2. Core Programme Objectives")
+    st.markdown("""
+    * **Operationalise the Human Capital Value Chain:** Map the direct relationship between strategic inputs, HR processes, operational outputs, and organizational outcomes.
+    * **Master Quantitative & Financial Metrics:** Calculate precision workforce metrics, including voluntary turnover financial loss (in ZAR), absenteeism indices, time-to-fill efficiencies, and Human Capital Return on Investment (HCROI).
+    * **Execute Rigorous Workforce Diagnostics:** Apply structured audit frameworks to evaluate organizational compliance, identify operational strengths, and formulate actionable recommendations for improvement.
+    * **Leverage Predictive Analytics & Dashboards:** Utilize data visualization to identify retention flight risks, address burnout factors, and optimize talent governance.
+    """)
+    
+    st.subheader("3. Structure of the Short Learning Programme")
+    
+    overview_data = {
+        "Unit Module": [
+            "Unit 1: Foundations & Human Capital Value Chain",
+            "Unit 2: Strategic HR Metrics & Workforce Calculators",
+            "Unit 3: Workforce Diagnostics & HR Audit Frameworks",
+            "Unit 4: Advanced Predictive Analytics & Reporting"
+        ],
+        "Focus & Deliverables": [
+            "Value chain alignment, efficiency vs effectiveness, strategic mapping.",
+            "Turnover cost calculation (ZAR), HCROI, absenteeism & productivity metrics.",
+            "Strengths identified, governance, audit matrices & recommendations for improvement.",
+            "Predictive flight risk modeling, interactive dashboarding, strategic reporting."
+        ]
+    }
+    st.table(pd.DataFrame(overview_data))
+    
+    st.info("💡 **Navigation Tip:** Use the sidebar menu on the left to navigate between modules and access interactive diagnostic tools.")
 
+https://github.com/bridgetdev-2026/hr-analytics-slp/edit/main/app.py
 elif selected_unit == "Unit 1: Foundations & Value Chain":
     st.header("Unit 1: Foundations & Value Chain")
     st.markdown("### The HR Value Chain Architecture")
