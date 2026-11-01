@@ -1,110 +1,93 @@
 
-import streamlit as st
-import pandas as pd
-import numpy as np
-import plotly.express as px
-
-# Page Configuration & Professional Academic Theme
-st.set_page_config(
-    page_title="HR Metrics & Analytics SLP Portal",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
-# Custom Styling for Academic Executive Design
-st.markdown("""
-    <style>
-    .main-header { font-size: 2.2rem; font-weight: 700; color: #002B49; margin-bottom: 0px; }
-    .sub-header { font-size: 1.1rem; color: #555555; margin-bottom: 20px; }
-    .card { background-color: #F8F9FA; border-left: 5px solid #002B49; padding: 18px; border-radius: 6px; margin-bottom: 20px; }
-    .academic-box { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-left: 4px solid #0284C7; padding: 16px; border-radius: 6px; margin-bottom: 15px; }
-    </style>
-""", unsafe_allow_html=True)
-
-# Application Header
-st.markdown('<p class="main-header">📊 HR Metrics & Analytics: Advanced Applied Analytics & Workforce Diagnostics</p>', unsafe_allow_html=True)
-st.markdown('<p class="sub-header">Nelson Mandela University | Short Learning Programme (SLP) Interactive Portal</p>', unsafe_allow_html=True)
-st.markdown("---")
-
-# Session State Initialization
-if "tutor_history" not in st.session_state:
-    st.session_state.tutor_history = []
-if "general_chat_history" not in st.session_state:
-    st.session_state.general_chat_history = []
-
-# Sidebar Navigation Setup
-st.sidebar.title("Programme Navigation")
-st.sidebar.markdown("**Short Learning Programme Modules**")
-
-selected_unit = st.sidebar.radio(
-    "Navigate to:",
-    [
-        "Programme Overview & Architecture",
-        "Unit 1: Foundations & Human Capital Value Chain",
-        "Unit 2: Strategic HR Metrics & Workforce Calculators",
-        "Unit 3: Workforce Diagnostics & HR Audit",
-        "Unit 4: Predictive Analytics & Reporting",
-        "Interactive AI Assistant & Delegate Support"
-    ]
-)
-
-st.sidebar.markdown("---")
-st.sidebar.info("🎓 **Programme Lead:** Department of Human Resource Management, Nelson Mandela University.")
-
 # ------------------------------------------------------------------------------
-# PROGRAMME OVERVIEW
+# PROGRAMME OVERVIEW & COURSE OUTLINE
 # ------------------------------------------------------------------------------
-if selected_unit == "Programme Overview & Architecture":
-    st.header("Short Learning Programme Overview & Architecture")
+if selected_unit == "Programme Course Outline & Overview":
+    st.header("Course Outline & Programme Overview")
+    st.caption("Nelson Mandela University | Faculty of Business and Economic Sciences")
+    st.markdown("---")
     
     st.markdown("""
     <div class="card">
-    <h4>Welcome Delegates</h4>
-    This specialized executive portal serves as your diagnostic workbench, interactive study guide, and analytics interface for the 
-    <b>Short Learning Programme in HR Metrics and Analytics: Advanced Applied Analytics and Workforce Diagnostics</b>. 
-    Designed specifically for South African HR practitioners, senior managers, and organizational leaders, this programme bridges higher 
-    education rigor with practical workplace application to transform human resource management into an evidence-based strategic business driver.
+    <h4>Programme Purpose & Target Audience</h4>
+    <b>SLP Title:</b> HR Metrics and Analytics: Advanced Applied Analytics and Workforce Diagnostics<br>
+    <b>Programme Type:</b> Short Learning Programme, offered as a standalone professional certification for industry practitioners.<br>
+    <b>Target Audience:</b> Working HR Practitioners, Line Managers, and Organisational Leaders seeking to build advanced competencies in workforce analytics.<br>
+    <b>Prerequisites:</b> An Advanced Diploma or Degree or an equivalent qualification; or relevant workplace experience.<br><br>
+    <b>Purpose:</b> To enable participants to use HR metrics and analytics as a diagnostic tool for operational and strategic decision-making, thereby optimising organisational human capital investments and shifting the HRM function from an administrative role to a strategic business partner.
     </div>
     """, unsafe_allow_html=True)
     
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric(label="Total Modules", value="4 Core Units")
-    col2.metric(label="NQF / Level", value="Advanced / Executive")
-    col3.metric(label="Diagnostic Tools", value="Embedded (ZAR)")
-    col4.metric(label="Focus Area", value="Workplace Flourishing")
+    col1.metric(label="Total Units", value="5 Core Units")
+    col2.metric(label="Programme Type", value="Standalone Certification")
+    col3.metric(label="Assessment", value="Formative & Diagnostic")
+    col4.metric(label="School", value="IOP & HRM")
     
     st.markdown("---")
+    st.subheader("Core Learning Outcomes & Assessment Criteria")
     
-    st.subheader("1. Programme Purpose & Strategic Rationale")
-    st.write(
-        "In modern African and global enterprise contexts, HR professionals are increasingly required to demonstrate the tangible strategic and "
-        "financial impact of human capital investments. This programme provides the analytical tools, governance frameworks, and diagnostic "
-        "methodologies necessary to evaluate human capital metrics, identify systemic workforce risks, and promote humanised, sustainable workplace flourishing."
-    )
-    
-    st.subheader("2. Core Programme Objectives")
-    st.markdown("""
-    * **Operationalise the Human Capital Value Chain:** Map the direct relationship between strategic inputs, HR processes, operational outputs, and organizational outcomes.
-    * **Master Quantitative & Financial Metrics:** Calculate precision workforce metrics, including voluntary turnover financial loss (in ZAR), absenteeism indices, time-to-fill efficiencies, and Human Capital Return on Investment (HCROI).
-    * **Execute Rigorous Workforce Diagnostics:** Apply structured audit frameworks to evaluate organizational compliance, identify operational strengths, and formulate actionable recommendations for improvement.
-    * **Leverage Predictive Analytics & Dashboards:** Utilize data visualization to identify retention flight risks, address burnout factors, and optimize talent governance.
-    """)
-    
-    st.subheader("3. Structure of the Short Learning Programme")
+    with st.expander("Outcome 1: Theoretical & Practical Foundations (Value Chain & eHRM)", expanded=True):
+        st.markdown("""
+        **Outcome:** Apply theoretical and practical knowledge to evaluate the purpose, evolution, and value of HR metrics, analytics, electronic human resource management (eHRM), and Human Resource Information Systems (HRIS) from a value chain perspective.
+        
+        *Assessment Criteria:*
+        * The role and evolution of HRM, eHRM, and HRISs are demonstrated through an exposition of relevant theory pertaining to HR metrics within the HRM value chain.
+        * Fundamental concepts (measures, metrics, descriptive vs. predictive/prescriptive analytics) are clearly defined and applied.
+        * A sound business case is made for adopting a value chain approach to HRM supported by metrics and analytics.
+        """)
+
+    with st.expander("Outcome 2: Data Architecture, Maturity Models & Process Workflow"):
+        st.markdown("""
+        **Outcome:** Assess the value of HR metrics, the analytics maturity model, and data architectures in business diagnostics and decision-making processes.
+        
+        *Assessment Criteria:*
+        * Organisational readiness is evaluated using the HR Analytics Maturity Model, identifying critical success factors and constraints.
+        * The selection and evaluation of HR analytics technologies, enterprise HCM platforms, and software vendor demonstrations are assessed against organisational maturity, local compliance, and budget alignment.
+        * The structured 5-step HR Analytics Process Model (Exploration, Examination, Extraction, Evaluation, Extrapolation) is applied to business scenarios.
+        * The nature of internal data sources (tenure, compensation, performance appraisals) and external benchmarks are analysed while navigating data quality, ethics, and governance.
+        """)
+
+    with st.expander("Outcome 3: Scorecards, Strategy Maps & Dashboards"):
+        st.markdown("""
+        **Outcome:** Formulate and implement an integrated HR metrics, scorecard, and analytics framework as an efficient diagnostic tool for operational and strategic decision-making.
+        
+        *Assessment Criteria:*
+        * Balanced Business Scorecards, HRM Scorecards, and Strategy Mapping are utilised to align workforce metrics with broader organisational objectives.
+        * Relevant index dashboards covering lifecycle areas (recruitment efficiency, employee retention/turnover, training ROI, and absenteeism) are developed and interpreted using appropriate analysis and graphing techniques.
+        * Gap analysis, alignment inventories, and predictive insights are successfully employed to solve operational problems and drive strategic interventions.
+        * Formal written analytical reports, periodic monthly/quarterly scorecard reviews, and executive presentation frameworks are formulated and applied to communicate workforce insights effectively.
+        """)
+
+    with st.expander("Outcome 4: Functional Indices & Advanced Predictive Modelling"):
+        st.markdown("""
+        **Outcome:** Formulate and evaluate comprehensive HRM functional indices (efficiency, effectiveness, and impact) and construct advanced diagnostic models and lifecycle dashboards to drive strategic decision-making.
+        
+        *Assessment Criteria:*
+        * HRM functional and practice indices are rigorously categorised and evaluated across administrative efficiency, operational effectiveness, and strategic impact dimensions.
+        * Granular functional metrics across planning, attraction, retention, motivation, productivity, and eHRM/HRIS technology are integrated into multi-dimensional dashboards.
+        * Descriptive reporting is successfully transitioned into advanced diagnostic analyses and predictive modelling (such as flight-risk scoring and regression) to anticipate operational bottlenecks and workforce turnover.
+        """)
+
+    st.markdown("---")
+    st.subheader("Short Learning Programme Curriculum Structure")
     
     overview_data = {
         "Unit Module": [
-            "Unit 1: Foundations & Human Capital Value Chain",
-            "Unit 2: Strategic HR Metrics & Workforce Calculators",
-            "Unit 3: Workforce Diagnostics & HR Audit Frameworks",
-            "Unit 4: Advanced Predictive Analytics & Reporting"
+            "Unit 1: Foundations of Strategic HRM, eHRM and the Value Chain",
+            "Unit 2: Data Architecture, Sources and Governance",
+            "Unit 3: Strategic Partnering, Balanced Scorecards, and Dashboards",
+            "Unit 4: HRM Practice Indices, Diagnostics and Predictive Modelling",
+            "Unit 5: Operationalising the HR Analytics Cycle",
+            "Annexures & Case Studies"
         ],
-        "Focus & Deliverables": [
-            "Value chain architecture, Resource-Based View (RBV), metric classification, alignment diagnostics.",
-            "Turnover cost calculation (ZAR), HCROI, absenteeism & productivity metrics.",
-            "Strengths identified, governance, audit matrices & recommendations for improvement.",
-            "Predictive flight risk modeling, interactive dashboarding, strategic reporting."
+        "Focus & Core Deliverables": [
+            "Strategic evolution, Coffee Journey value chain, Measures vs Metrics vs Analytics, Maturity Model, Best practice principles.",
+            "HCM platforms, internal data silos, external benchmarks, Excel diagnostic models, POPIA & GenAI Bilateral Coaching.",
+            "Strategic business partnering, HR Strategy Maps, 4-Perspective Scorecard, Google (PiLab) & Birmingham City Council case studies.",
+            "Efficiency vs Effectiveness vs Impact indices, Logistic regression, p-values, VIF, ROC-AUC, Apex HiPo flight risk pipeline.",
+            "HR team sensitisation, analytical culture, small-scale pilot execution, legal collaboration, board memo presentation framework.",
+            "Annexure A: Apex HiPo Technical Specialist Audit & Annexure B: The Practitioner's Journey (Phases 1–3)."
         ]
     }
     st.table(pd.DataFrame(overview_data))
