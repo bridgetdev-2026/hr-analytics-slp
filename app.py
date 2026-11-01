@@ -90,284 +90,407 @@ if selected_unit == "Programme Course Outline & Overview":
             "Annexure A: Apex HiPo Technical Specialist Audit & Annexure B: The Practitioner's Journey (Phases 1–3)."
         ]
     }
-    st.table(pd.DataFrame(overview_data))
+
 
 # ------------------------------------------------------------------------------
-# UNIT 1: FOUNDATIONS & HUMAN CAPITAL VALUE CHAIN
+# UNIT 1: FOUNDATIONS OF STRATEGIC HRM, eHRM AND THE VALUE CHAIN
 # ------------------------------------------------------------------------------
-elif selected_unit == "Unit 1: Foundations & Human Capital Value Chain":
-    st.header("Unit 1: Foundations & Human Capital Value Chain Architecture")
-    st.caption("Advanced Academic Theory, Strategic Metric Classification & Diagnostic Workbench")
+elif selected_unit == "Unit 1: Foundations of Strategic HRM, eHRM and the Value Chain":
+    st.header("Unit 1: Foundations of Strategic HRM, eHRM and the Value Chain")
+    st.caption("Official Nelson Mandela University SLP Learner Guide & Interactive Diagnostic Workbench")
     st.markdown("---")
 
-    tab_theory, tab_diagnostic, tab_classifier, tab_tutor = st.tabs([
-        "📖 Advanced Academic Theory", 
-        "🕸️ Interactive Value Chain Diagnostic", 
-        "📊 Strategic Metric Classifier", 
-        "🤖 Unit 1 Socratic AI Tutor"
+    # Module Tabs
+    tab_theory, tab_coffee, tab_video, tab_diagnostic, tab_classifier, tab_tutor, tab_checkpoint = st.tabs([
+        "📖 1.1-1.6 Module Content", 
+        "☕ The Coffee Journey",
+        "🎥 Video Lecture & Media",
+        "🕸️ Apex Call Centre Workbench", 
+        "📊 Unpacking Terminology", 
+        "🤖 Socratic AI Tutor",
+        "✍️ Formative Checkpoint"
     ])
 
-    # TAB 1: ACADEMIC THEORY
+    # --------------------------------------------------------------------------
+    # TAB 1: ACADEMIC THEORY & CONTENT (1.1 - 1.6)
+    # --------------------------------------------------------------------------
     with tab_theory:
-        st.subheader("1. Strategic Rationale & Theoretical Foundations")
+        st.subheader("1.1 Learning Objectives")
         st.markdown("""
-        Historically, Human Resource Management (HRM) operated primarily as an administrative function focused on transaction processing, 
-        regulatory compliance, and operational record-keeping. In modern knowledge-driven economies, this traditional orientation creates a 
-        significant strategic disconnect. 
-        
-        To establish human capital as a strategic business driver, HR practitioners must transition from measuring **activity** 
-        to measuring **value creation**.
+        By the end of this unit, you will be able to:
+        * Outline the role and evolution of the Human Resource Management (HRM) function from a value chain and strategic business partnering perspective.
+        * Differentiate clearly between foundational data concepts: measures, metrics, analytics, and predictive/prescriptive analytics.
+        * Evaluate organisational data readiness using the HR Analytics Maturity Model and identify critical success factors, constraints, and best practice principles.
+        * Explain the nature, purpose, and integration of Electronic HRM (eHRM) and Human Resource Information Systems (HRIS) architectures in supporting data-driven decisions.
+        * Navigate the 5-Step HR Analytics Process Model (Exploration to Extrapolation) as the overarching roadmap for the course.
+        * Evaluate and select HR analytics technologies, HCM suites, and mid-market tools tailored to organisational needs, budget, and local regulatory environments.
+        * Understand the role of Generative AI and Bilateral Iterative Coaching as collaborative tools in accelerating data preparation and analytical workflows.
         """)
+
+        st.markdown("---")
+        st.subheader("1.2 The Strategic Evolution of HRM")
+        st.write(
+            "Historically, human resources operated primarily as an administrative, compliance-driven, and transactional department. "
+            "In this traditional personnel-management paradigm, the function focused almost exclusively on record-keeping, payroll administration, "
+            "contract execution, and enforcing labour regulations. Modern organisational success, however, demands a fundamental paradigm shift: "
+            "the recognition of human capital as the ultimate core driver of sustainable competitive advantage. Because physical assets, "
+            "technology, and capital can easily be replicated by competitors, a skilled, engaged, and strategically aligned workforce remains "
+            "the sole inimitable asset an organisation possesses."
+        )
 
         st.markdown("""
         <div class="card">
-        <h4>The Strategic Shift in HR Analytics</h4>
+        <h4>The Strategic Shift & Imperative</h4>
         <ul>
-            <li><b>Traditional HR Accounting:</b> Focuses exclusively on costs, administrative efficiency, and historical compliance (e.g., total training spend, headcount numbers).</li>
-            <li><b>Strategic HR Analytics:</b> Evaluates how human capital investments directly influence organizational capabilities, customer outcomes, operational velocity, and financial returns (e.g., Human Capital ROI, quality-of-hire impact).</li>
+            <li><b>The Shift:</b> HR has evolved from a reactive record-keeping and payroll unit into a proactive strategic business partner, co-creating business strategy alongside executive leadership.</li>
+            <li><b>The Imperative:</b> To sit legitimately at the executive table, HR practitioners must abandon intuition-based decision-making. They must empirically measure and demonstrate how people decisions (talent acquisition, leadership development, compensation, workflow design) directly impact operational performance, customer satisfaction, and financial returns.</li>
         </ul>
         </div>
         """, unsafe_allow_html=True)
 
-        st.subheader("2. The Human Capital Value Chain Architecture")
-        st.markdown("""
-        Pioneered by **Huselid, Becker, and Beatty (2005)**, the **Human Capital Value Chain** provides the architectural logic for 
-        linking HR practices directly to the execution of organizational strategy. The value chain operates as a multi-stage causal model:
-        """)
+        st.markdown("---")
+        st.subheader("1.3 The HRM Value Chain Approach")
+        st.write(
+            "Adopting a value chain perspective means viewing the human resource management function not as a siloed, administrative department, "
+            "but as an interconnected series of strategic, value-adding processes. Drawing from strategic management theory (such as Michael Porter’s "
+            "value chain framework adapted for human capital), this approach conceptualises HR as an operational pipeline that transforms raw "
+            "organisational inputs into sustainable competitive outputs."
+        )
 
         col_v1, col_v2 = st.columns(2)
         with col_v1:
             st.markdown("""
             <div class="academic-box">
-            <b>Stage 1: HR Inputs & Investments</b><br>
-            The financial, technological, and human resources allocated to HR (e.g., HR operational budget, HRIS infrastructure, talent acquisition spend).
-            <hr style="margin: 8px 0;">
-            <b>Stage 2: HR Processes & Activities</b><br>
-            Core functional practices designed and executed by HR (e.g., onboarding programs, competency-based training, performance management cycles).
+            <b>Inputs:</b> The foundational resources entering the system, including human capital (talent, skills, and competencies), financial capital, technological infrastructure (HRIS/eHRM), and intellectual property.<br><br>
+            <b>Throughputs (The Employee Lifecycle):</b> The core operational processes managed by HR, spanning workforce planning, talent acquisition, onboarding, training and development, performance management, remuneration, and retention.
             </div>
             """, unsafe_allow_html=True)
-            
         with col_v2:
             st.markdown("""
             <div class="academic-box">
-            <b>Stage 3: HR Deliverables & Capabilities</b><br>
-            Intermediate workforce capabilities produced by HR processes (e.g., employee engagement, psychological safety, leadership depth, workforce agility).
-            <hr style="margin: 8px 0;">
-            <b>Stage 4: Strategic Business Outcomes</b><br>
-            Tangible financial and operational results (e.g., Revenue per FTE, customer retention rates, net profit margins, Human Capital ROI).
+            <b>Outputs:</b> The ultimate strategic results generated by the system, including enhanced employee productivity, organisational innovation, heightened customer satisfaction, reduced operational risk, and long-term revenue growth.<br><br>
+            <b>Connecting the Chain:</b> Metrics and analytics serve as the vital connective tissue:
+            <ul>
+                <li><i>Tracking Efficiency:</i> Measuring speed, cost, and resource utilisation (e.g., time-to-fill, administrative cost per employee).</li>
+                <li><i>Assessing Effectiveness:</i> Evaluating intermediate programme goals (e.g., training transfer rates, quality of hire).</li>
+                <li><i>Proving Ultimate Impact:</i> Demonstrating direct causal links to business outcomes (e.g., how engagement correlates with customer retention).</li>
+            </ul>
             </div>
             """, unsafe_allow_html=True)
 
-        st.subheader("3. Resource-Based View (RBV) & VRIO Framework in HR")
-        st.markdown("""
-        Grounded in **Barney’s (1991) Resource-Based View (RBV)**, organizational competitiveness depends on resources that are:
-        * **Valuable (V):** Neutralizing threats or exploiting market opportunities.
-        * **Rare (R):** Possessed by very few competing enterprises.
-        * **Inimitable (I):** Costly or impossible for competitors to duplicate (often due to complex social dynamics and culture).
-        * **Organised (O):** Supported by institutional structures capable of absorbing and deploying the asset.
-
-        When applied to workforce metrics, standard administrative processes (like payroll or template job descriptions) are rarely 
-        *Inimitable*. True competitive advantage stems from **Stage 3 Deliverables**—such as high psychological safety, deep tacit knowledge, 
-        and an authentic humanised work environment.
-        """)
-
-        st.subheader("4. Categorising HR Metrics: Efficiency, Effectiveness, and Business Impact")
+        st.markdown("---")
+        st.subheader("1.5 Building the Business Case & Best Practice Principles")
         
-        metrics_summary_data = {
-            "Metric Category": ["HR Efficiency Metrics", "HR Effectiveness Metrics", "Strategic Business Impact Metrics"],
-            "Core Focus": ["'Doing Things Right' (Cost & Speed)", "'Doing the Right Things' (Quality & Capability)", "Financial & Operational Value Created"],
-            "Primary Audience": ["HR Operational Managers", "HR Business Partners & Line Managers", "Executive Board, CEO & CFO"],
-            "Examples (ZAR / Operational)": [
-                "Cost per hire (R), Time to fill vacancies, HR staff-to-employee ratio.",
-                "Quality of hire (12-month rating), Competency gap closure %, Retention of critical talent.",
-                "Human Capital ROI (HCROI), Revenue per FTE (R), Profit per employee (R)."
-            ]
-        }
-        st.table(pd.DataFrame(metrics_summary_data))
-
-    # TAB 2: INTERACTIVE DIAGNOSTIC
-    with tab_diagnostic:
-        st.subheader("Workforce Value Chain Maturity Diagnostic")
-        st.write("Evaluate your organization across all four stages of the Human Capital Value Chain to generate a real-time maturity index and gap analysis.")
-
-        c_d1, c_d2 = st.columns([1, 1])
-
-        with c_d1:
-            st.markdown("#### Diagnostic Input Sliders")
-            s_inputs = st.slider("Stage 1: HR Inputs & Resource Allocation (1-10)", 1, 10, 6, help="Rate adequacy of HR budget, tech tools, and operational staffing.")
-            s_processes = st.slider("Stage 2: HR Process Standardization & Execution (1-10)", 1, 10, 5, help="Rate quality of recruitment, onboarding, and performance management.")
-            s_deliverables = st.slider("Stage 3: Intermediate Capabilities & Engagement (1-10)", 1, 10, 7, help="Rate levels of workforce competence, well-being, and leadership depth.")
-            s_outcomes = st.slider("Stage 4: Strategic Impact & HCROI Measurement (1-10)", 1, 10, 4, help="Rate capability to link workforce metrics directly to financial results.")
-
-            total_score = s_inputs + s_processes + s_deliverables + s_outcomes
-            maturity_pct = (total_score / 40) * 100
+        col_p1, col_p2 = st.columns(2)
+        with col_p1:
+            st.markdown("""
+            <div class="card">
+            <h4>1.5.1 HRM Best Practice Principles</h4>
+            <ul>
+                <li><b>Strategic Alignment (Line-of-Sight):</b> Metrics must directly support broader strategic goals.</li>
+                <li><b>Evidence-Based Decision Making:</b> Replacing gut-feel with verifiable data.</li>
+                <li><b>Data Integrity & Governance:</b> Ensuring accuracy and consistent definitions.</li>
+                <li><b>Ethical Stewardship & Privacy:</b> Balancing analytics with strict POPIA compliance and employee trust.</li>
+                <li><b>Actionable Insight:</b> Avoiding 'analysis paralysis' by driving concrete interventions.</li>
+                <li><b>Cross-Functional Collaboration:</b> Active partnership between HR, IT, line management, and legal.</li>
+            </ul>
+            </div>
+            """, unsafe_allow_html=True)
             
-            st.markdown("---")
-            st.metric("Overall Value Chain Maturity Score", f"{maturity_pct:.1f}%")
-
-        with c_d2:
-            st.markdown("#### Value Chain Radar Profile")
-            radar_data = pd.DataFrame({
-                "Stage": ["1. Inputs", "2. Processes", "3. Deliverables", "4. Business Impact"],
-                "Maturity Score": [s_inputs, s_processes, s_deliverables, s_outcomes]
-            })
-            fig_radar = px.line_polar(
-                radar_data, r="Maturity Score", theta="Stage", line_close=True,
-                range_r=[0, 10], title="Human Capital Value Creation Profile"
-            )
-            fig_radar.update_traces(fill='toself', fillcolor='rgba(2, 132, 199, 0.2)', line_color='#0284C7')
-            st.plotly_chart(fig_radar, use_container_width=True)
+        with col_p2:
+            st.markdown("""
+            <div class="card">
+            <h4>1.5.2 Criticisms & Operational Constraints</h4>
+            <ul>
+                <li><b>Lack of Inclination/Readiness:</b> Cultural resistance among traditional practitioners.</li>
+                <li><b>Characterisation Deficits:</b> Unstandardised records across regional branches.</li>
+                <li><b>The 'Quality vs Quantity' Trap:</b> Gathering excessive metrics without purpose.</li>
+                <li><b>Insufficient Software/Tools:</b> Outdated legacy systems yielding incomplete outcomes.</li>
+                <li><b>Over-Reliance on Quantification:</b> Losing human empathy and qualitative context.</li>
+            </ul>
+            </div>
+            """, unsafe_allow_html=True)
 
         st.markdown("---")
-        st.subheader("Diagnostic Feedback & Action Plan")
-        
-        gap = max(s_inputs, s_processes) - min(s_deliverables, s_outcomes)
-        
-        if s_outcomes < 5:
-            st.warning("""
-            ⚠️ **Measurement Disconnect Detected (Stage 4 Deficiency):**
-            Your organization demonstrates operational activity in Stages 1 and 2, but lacks analytical mechanisms to prove 
-            financial or strategic outcome impact (Stage 4). 
+        st.subheader("1.5.3 The HR Analytics Maturity Model")
+        maturity_table = {
+            "Level": ["Level 1: Reactive / Administrative Reporting", "Level 2: Operational / Standardised Reporting", "Level 3: Advanced / Strategic Analytics", "Level 4: Predictive & Prescriptive Modelling"],
+            "Focus": ["Operational tracking, headcount counts, compliance monitoring, and manual processing.", "Routine tracking of standard historical metrics (e.g., monthly turnover figures, cost-per-hire averages).", "Linking HR metrics directly to business outcomes and conducting root-cause analyses.", "Utilising advanced statistical modelling and algorithms to forecast future workforce behaviour and prescribe automated interventions."],
+            "Diagnostic Value & Limitation": ["Answers only 'What happened?' retrospectively, with HR acting purely as an administrative cost centre.", "Provides baseline data across departments but lacks strategic context or root-cause diagnosis.", "Answers 'Why did it happen?' by connecting HR interventions to productivity and financial performance.", "Answers 'What will happen next and what should we do about it?', transforming HR into a fully predictive strategic partner."]
+        }
+        st.table(pd.DataFrame(maturity_table))
+
+        st.markdown("---")
+        st.subheader("1.6 eHRM and HRIS: The Digital Backbone")
+        st.write(
+            "To gather, clean, and analyse workforce data effectively, organisations cannot rely on manual spreadsheets; "
+            "they require a robust technological architecture formed by two interdependent pillars:"
+        )
+        st.markdown("""
+        * **Human Resource Information Systems (HRIS):** The core database architectures and back-end software platforms used to store, manage, and process master employee data (tenure, compensation, appraisal ratings, compliance).
+        * **Electronic HRM (eHRM):** The front-end administrative, operational, and transactional execution of HR functions using web-based portals and networks (self-service leave, goal tracking, personal updates).
+        * **The Strategic Link:** eHRM and HRIS work in tandem to provide clean, centralised data pipelines. Without this digital architecture, analytics initiatives collapse due to poor data quality and characterisation deficits.
+        """)
+
+    # --------------------------------------------------------------------------
+    # TAB 2: THE COFFEE JOURNEY ANALOGY
+    # --------------------------------------------------------------------------
+    with tab_coffee:
+        st.subheader("1.3 The HRM Value Chain: The Coffee Journey Analogy")
+        st.info(
+            "When you buy a cup of coffee, you are experiencing a carefully crafted product where value has been added at every single stage "
+            "of the supply chain. The HRM value chain operates in the exact same way, transforming raw human potential into ultimate organisational performance."
+        )
+
+        c_c1, c_c2, c_c3 = st.columns(3)
+        with c_c1:
+            st.markdown("""
+            <div class="card">
+            <h4>Stage 1: 'GET'</h4>
+            <b>Harvesting Raw Beans</b><br><br>
+            <i>The Analogy:</i> A farmer must forecast demand, select soil, and harvest high-grade beans. You cannot make exceptional coffee with low-quality raw materials.<br><br>
+            <i>In Practice:</i>
+            <ul>
+                <li><b>Talent Planning:</b> Forecasting commercial demand and structural gaps.</li>
+                <li><b>Targeted Recruitment:</b> Sourcing and vetting high-potential human capital.</li>
+                <li><b>Strategic Onboarding:</b> Transitioning raw talent smoothly into the operational ecosystem.</li>
+            </ul>
+            </div>
+            """, unsafe_allow_html=True)
             
-            *Recommended Action:* Prioritize building metrics for Human Capital ROI (HCROI) and critical skill retention impact.
-            """)
-        elif gap > 3:
-            st.info("""
-            ℹ️ **Activity-Capability Gap Identified:**
-            High effort/spend in HR processes is not translating proportionally into Stage 3 workforce capabilities or engagement.
+        with c_c2:
+            st.markdown("""
+            <div class="card">
+            <h4>Stage 2: 'DEVELOP & KEEP'</h4>
+            <b>Processing & Roasting into Grades</b><br><br>
+            <i>The Analogy:</i> Raw beans taste bitter. They must be roasted, graded, and blended. If equipment isn't maintained or millers paid fairly, skills go elsewhere.<br><br>
+            <i>In Practice:</i>
+            <ul>
+                <li><b>Learning & Development:</b> Elevating baseline competencies via continuous coaching.</li>
+                <li><b>Performance Tracking:</b> Calibrating outputs and cascading KPIs.</li>
+                <li><b>Total Rewards:</b> Structuring equitable grading, remuneration, and career management.</li>
+            </ul>
+            </div>
+            """, unsafe_allow_html=True)
             
-            *Recommended Action:* Audit the quality and relevance of learning, development, and onboarding interventions.
-            """)
-        else:
-            st.success("""
-            ✅ **Balanced Strategic Alignment:**
-            Your Value Chain profile demonstrates strong alignment between operational inputs and strategic business outcomes.
+        with c_c3:
+            st.markdown("""
+            <div class="card">
+            <h4>Stage 3: 'ENGAGE'</h4>
+            <b>The Skilled Barista Crafting the Final Cup</b><br><br>
+            <i>The Analogy:</i> Even with fine beans, a poor barista ruins the product. A skilled barista extracts an espresso that delights the customer.<br><br>
+            <i>In Practice:</i>
+            <ul>
+                <li><b>Empathetic Leadership:</b> Forging relational trust and organizational justice.</li>
+                <li><b>Psychological Safety:</b> Protecting employee wellness and mitigating change fatigue.</li>
+                <li><b>Culture & Transformation:</b> Fostering industrial stability, equity, and deep motivation.</li>
+            </ul>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="background-color: #002B49; color: white; padding: 15px; border-radius: 6px; text-align: center;">
+        <h4>Integrated HRIS Data Flows</h4>
+        Running beneath this entire coffee journey is the digital plumbing—predictive analytics, compliance metrics, and interconnected employee data linking the entire value chain into a single strategic intelligence hub.
+        </div>
+        """, unsafe_allow_html=True)
+
+    # --------------------------------------------------------------------------
+    # TAB 3: EMBEDDED VIDEO LECTURE & MEDIA PLAYER
+    # --------------------------------------------------------------------------
+    with tab_video:
+        st.subheader("🎥 Unit 1 Video Lecture & Curriculum Walkthrough")
+        st.caption("Nelson Mandela University | Executive HR Analytics Lecture Series")
+        
+        # Interactive Video Player
+        st.markdown("#### Watch Unit 1 Lecture: Foundations of Strategic HRM & The Value Chain")
+        
+        # Video URL Input / Default Placeholder Lecture
+        video_url = st.text_input(
+            "Video Stream Source URL (YouTube / Vimeo / MP4):", 
+            value="https://www.youtube.com/watch?v=dQw4w9WgXcQ",  # Configurable module video URL
+            help="Paste your hosted lecture recording, slide walkthrough, or MP4 video link here."
+        )
+        
+        try:
+            st.video(video_url)
+        except Exception:
+            st.info("📺 Enter a valid MP4 or YouTube URL above to load your custom lecture stream.")
+
+        st.markdown("---")
+        with st.expander("📝 View Video Lecture Script & Executive Summary Notes"):
+            st.markdown("""
+            ### Executive Lecture Summary: Unit 1 Key Takeaways
+            1. **The Administrative Shift:** Why HR must abandon gut-feel and intuitively driven policy changes in favour of empirical value-chain evidence.
+            2. **The Coffee Journey Architecture:** How 'GET', 'DEVELOP & KEEP', and 'ENGAGE' stages interact to build organisational capability.
+            3. **The Call Centre Dilemma:** Why raw measures (30 exits) trigger panic, metrics (24% turnover) highlight operational problems, and predictive analytics (call volume & coaching breaks) prescribe solutions.
+            4. **POPIA Compliance:** Ensuring employee data privacy and ethical stewardship while building integrated HRIS data pipelines.
             """)
 
-    # TAB 3: METRIC CLASSIFIER WORKBENCH
+    # --------------------------------------------------------------------------
+    # TAB 4: APEX CALL CENTRE WORKBENCH (MATURITY & PREDICTIVE DIAGNOSTIC)
+    # --------------------------------------------------------------------------
+    with tab_diagnostic:
+        st.subheader("1.4.3 & 1.5.3 Interactive Workbench: Apex Logistics Call Centre Scenario")
+        st.markdown("Simulate the 4 levels of the HR Analytics Maturity Model using the official Call Centre case study.")
+
+        col_w1, col_w2 = st.columns(2)
+        
+        with col_w1:
+            st.markdown("#### Scenario Inputs & Operational Controls")
+            daily_calls = st.slider("Average Daily Calls per Agent:", 40, 120, 85, help="Baseline call volume per customer service agent.")
+            coaching_breaks = st.radio("Structured Coaching Break Policy:", ["No Structured Breaks", "30-Min Structured Rotational Break"])
+            shift_fatigue = st.slider("Unscheduled Overtime Hours / Month:", 0, 50, 25)
+
+            # Predictive flight risk calculation logic from Section 1.4.3
+            risk_score = (daily_calls * 0.8) + (shift_fatigue * 1.2)
+            if coaching_breaks == "30-Min Structured Rotational Break":
+                risk_score -= 30
+            risk_score = max(5, min(95, risk_score))
+
+        with col_w2:
+            st.markdown("#### Maturity Model Diagnostic Output")
+            
+            st.metric(label="Predicted 60-Day Exit Likelihood", value=f"{risk_score:.1f}%")
+            
+            if risk_score > 75:
+                st.error("🚨 **Level 4 Prescriptive Intervention Required:** Agents handling high call volumes without structured coaching breaks exhibit a >75% exit probability within 60 days. *Prescription:* Cap daily call volumes at 80 and mandate rotational breaks immediately.")
+            elif risk_score > 45:
+                st.warning("⚠️ **Level 3 Diagnostic Finding:** Moderate turnover risk detected. Multivariate regression indicates call volumes and unmanaged overtime correlate strongly with stress-related absenteeism.")
+            else:
+                st.success("✅ **Level 2 Operational Baseline:** Turnover risk sits within acceptable industry benchmarks (<15%). Ensure shift coverage remains stable.")
+
+        st.markdown("---")
+        st.markdown("#### The 4 Maturity Levels Applied to this Scenario:")
+        st.markdown("""
+        * **Level 1 (Measure):** *"We had 30 customer service agents resign this quarter."* (Raw count triggering panic without context).
+        * **Level 2 (Metric):** *"Our quarterly call centre turnover rate is 24%, which is 8% higher than our industry benchmark."* (Contextualised performance).
+        * **Level 3 (Diagnostic Analytics):** *"Multivariate regression reveals high turnover is driven by agents handling >80 calls/day without coaching breaks."* (Root cause isolated).
+        * **Level 4 (Predictive & Prescriptive):** *"We predict losing 45 agents next quarter unless we cap daily call volumes and introduce rotational breaks."* (Actionable foresight).
+        """)
+
+    # --------------------------------------------------------------------------
+    # TAB 5: UNPACKING TERMINOLOGY WORKBENCH
+    # --------------------------------------------------------------------------
     with tab_classifier:
-        st.subheader("Strategic Metric Classifier Workbench")
-        st.write("Test your diagnostic capability by classifying real-world metrics into their correct Value Chain categories.")
+        st.subheader("1.4 Unpacking Terminology: Interactive Classifier")
+        st.write("Test your understanding of Measures, Metrics, and Analytics by evaluating workplace scenarios.")
 
-        metrics_db = {
-            "Cost per Hire (R)": {
-                "category": "HR Efficiency Metric",
-                "explanation": "Measures the operational expenditure required to recruit a single worker. Focuses purely on cost and resource speed (Stage 1/2)."
+        term_db = {
+            "Total Monthly Payroll = R25,000,000": {
+                "type": "Measure",
+                "reason": "Standalone raw quantitative count. Tells you absolute volume, but provides no relational context or denominator (Section 1.4.1)."
             },
-            "Quality of Hire (12-Month Performance Index)": {
-                "category": "HR Effectiveness Metric",
-                "explanation": "Evaluates the actual output quality and capability delivered by a new hire over time, moving beyond simple speed of recruitment (Stage 3)."
+            "Cost-per-Hire = R12,000 (vs Industry Benchmark of R10,000)": {
+                "type": "Metric",
+                "reason": "Measures put into context with a denominator (Total Spend / Total Hires) to evaluate performance against a baseline (Section 1.4.2)."
             },
-            "Human Capital Return on Investment (HCROI)": {
-                "category": "Strategic Business Impact Metric",
-                "explanation": "Directly links workforce expenditure to overall organizational revenue and operating profitability (Stage 4)."
+            "Agents handling >80 calls/day without breaks have a 90% likelihood of exit within 60 days": {
+                "type": "Analytics (Predictive / Prescriptive)",
+                "reason": "Statistical exploration that uncovers root causes, forecasts probabilities, and prescribes optimized interventions (Section 1.4.3)."
             },
-            "Average Training Hours per Employee": {
-                "category": "HR Efficiency Metric",
-                "explanation": "Tracks activity volume. High training hours do not guarantee skill acquisition unless outcome capabilities are measured (Stage 2)."
+            "4,500 Total Training Hours Delivered": {
+                "type": "Measure",
+                "reason": "Raw physical observation. Tells you nothing about efficiency, skill transfer, or performance quality (Section 1.4.1)."
             },
-            "Voluntary Turnover Rate in Critical Roles": {
-                "category": "HR Effectiveness Metric",
-                "explanation": "Measures the retention of key capability assets that directly protect core organizational competencies (Stage 3)."
-            },
-            "Revenue per Full-Time Equivalent (FTE)": {
-                "category": "Strategic Business Impact Metric",
-                "explanation": "Measures financial productivity per unit of human capital deployed (Stage 4)."
+            "Absenteeism Rate = 6.5% of Scheduled Workdays": {
+                "type": "Metric",
+                "reason": "Percentage ratio comparing lost workdays to scheduled workdays to standardize performance across branches (Section 1.4.2)."
             }
         }
 
-        selected_metric_name = st.selectbox("Select a Workforce Metric to Audit:", list(metrics_db.keys()))
-        user_selection = st.radio(
-            f"Classify **'{selected_metric_name}'**:",
-            ["HR Efficiency Metric", "HR Effectiveness Metric", "Strategic Business Impact Metric"]
+        selected_term = st.selectbox("Select a Workplace Data Statement to Classify:", list(term_db.keys()))
+        user_term_choice = st.radio(
+            f"Classify **'{selected_term}'**:",
+            ["Measure", "Metric", "Analytics (Predictive / Prescriptive)"]
         )
 
-        if st.button("Submit Classification Audit"):
-            actual = metrics_db[selected_metric_name]["category"]
-            explanation = metrics_db[selected_metric_name]["explanation"]
+        if st.button("Audit Classification"):
+            correct_type = term_db[selected_term]["type"]
+            reasoning = term_db[selected_term]["reason"]
 
-            if user_selection == actual:
-                st.success(f" Correct! **'{selected_metric_name}'** is an **{actual}**.")
-                st.write(f"**Academic Rationale:** {explanation}")
+            if user_term_choice == correct_type:
+                st.success(f" Correct! **'{selected_term}'** is a **{correct_type}**.")
+                st.write(f"**NMU Curriculum Explanation:** {reasoning}")
             else:
-                st.error(f"❌ Incorrect Classification. You selected **{user_selection}**, but it is actually an **{actual}**.")
-                st.write(f"**Academic Rationale:** {explanation}")
+                st.error(f"❌ Incorrect. You selected **{user_term_choice}**, but it is actually a **{correct_type}**.")
+                st.write(f"**NMU Curriculum Explanation:** {reasoning}")
 
-    # TAB 4: SOCRATIC AI TUTOR
+    # --------------------------------------------------------------------------
+    # TAB 6: SOCRATIC AI ACADEMIC TUTOR
+    # --------------------------------------------------------------------------
     with tab_tutor:
         st.subheader("🤖 Unit 1 Socratic AI Academic Tutor")
-        st.write("Ask nuanced theoretical questions regarding the Value Chain, VRIO framework, or HR metric classification.")
+        st.write("Engage with your virtual tutor on the Coffee Journey, Call Centre scenario, POPIA ethics, and the Maturity Pyramid.")
 
-        st.markdown("**Suggested Discussion Prompts:**")
-        col_p1, col_p2, col_p3 = st.columns(3)
+        st.markdown("**Select a Discussion Prompt or Ask Your Own Question:**")
+        col_tp1, col_tp2, col_tp3 = st.columns(3)
         
-        prompt_input = ""
-        if col_p1.button("How do I explain HCROI to my CFO?"):
-            prompt_input = "How do I explain HCROI to my CFO?"
-        if col_p2.button("Difference between Efficiency & Effectiveness?"):
-            prompt_input = "What is the core difference between HR efficiency and HR effectiveness metrics?"
-        if col_p3.button("How does VRIO relate to HR metrics?"):
-            prompt_input = "How does Barney's VRIO framework apply to human capital metrics?"
+        t_prompt = ""
+        if col_tp1.button("Explain the Coffee Journey"):
+            t_prompt = "Explain how the Coffee Journey analogy illustrates the HRM Value Chain."
+        if col_tp2.button("Difference: Measure vs Metric?"):
+            t_prompt = "What is the core difference between a measure and a metric using the Call Centre scenario?"
+        if col_tp3.button("How to move Level 1 to Level 4?"):
+            t_prompt = "How does an organisation transition from Level 1 Reactive reporting to Level 4 Predictive modelling?"
 
-        user_tutor_query = st.text_input("Enter your question for the Unit 1 Tutor:", value=prompt_input)
+        user_tutor_query = st.text_input("Enter your question for the Unit 1 Tutor:", value=t_prompt)
 
         if st.button("Ask Unit 1 Tutor"):
             if user_tutor_query:
-                query_low = user_tutor_query.lower()
+                q_low = user_tutor_query.lower()
 
-                if "cfo" in query_low or "hcroi" in query_low or "financial" in query_low:
-                    tutor_response = """
-                    **Unit 1 Tutor Response:**
+                if "coffee" in q_low:
+                    ans = """
+                    **Unit 1 Socratic Tutor:**
                     
-                    When presenting to a CFO, you must bridge the gap between **Stage 1 (HR Expenditure)** and **Stage 4 (Financial Return)**:
+                    The **Coffee Journey Analogy** (Section 1.3) illustrates that value is added at every single stage of human resource management:
                     
-                    1. **Acknowledge the CFO's Lens:** CFOs view traditional HR metrics (like cost-per-hire) as overhead expenses to be minimized.
-                    2. **Reframe Human Capital as a Profit Driver:** Introduce **Human Capital Return on Investment (HCROI)**. Explain that HCROI measures how many Rands of profit are generated for every R 1.00 invested in total workforce compensation.
-                    3. **The Value Chain Argument:** Explain that cutting HR budgets in Stage 1 directly degrades Stage 3 capabilities (engagement, technical competency), which ultimately reduces Stage 4 Revenue per FTE.
+                    1. **Stage 1: 'GET' (Harvesting Raw Beans):** Talent planning, targeted recruitment, and strategic onboarding. You cannot brew great coffee with poor raw beans.
+                    2. **Stage 2: 'DEVELOP & KEEP' (Roasting & Grading):** Learning & development, performance tracking, and total rewards. Raw beans taste bitter until roasted and graded.
+                    3. **Stage 3: 'ENGAGE' (The Skilled Barista):** Empathetic leadership, psychological safety, and culture. A poor barista ruins good beans; a skilled barista extracts customer satisfaction and value.
                     
-                    *Socratic Follow-Up Question:* What specific financial data points from your current balance sheet would you need to calculate HCROI accurately?
+                    *Socratic Reflection Question:* Which stage of the coffee journey is currently experiencing the biggest operational bottleneck in your organisation?
                     """
-                elif "efficiency" in query_low or "effectiveness" in query_low:
-                    tutor_response = """
-                    **Unit 1 Tutor Response:**
+                elif "measure" in q_low or "metric" in q_low or "call centre" in q_low:
+                    ans = """
+                    **Unit 1 Socratic Tutor:**
                     
-                    The distinction rests on **Speed & Cost** versus **Quality & Capability**:
+                    Let's unpack the distinction using the Call Centre scenario (Section 1.4):
                     
-                    * **HR Efficiency ('Doing Things Right'):** Measures administrative speed and operational cost minimization. *Example:* Reducing Time-to-Fill from 45 days to 30 days.
-                    * **HR Effectiveness ('Doing the Right Things'):** Measures the capability and strategic value delivered. *Example:* Ensuring the person hired scores in the top 20% for performance at 12 months.
+                    * **Measure (Raw Count):** *"30 agents resigned."* This triggers panic because it lacks context, denominators, or baselines.
+                    * **Metric (Contextual Ratio):** *"24% quarterly turnover rate (8% above benchmark)."* This introduces a denominator and highlights a clear operational problem.
+                    * **Analytics (Root Cause & Prediction):** *"Agents handling >80 calls/day without breaks have a 90% exit probability."* This diagnoses why it happens and prescribes automated rotational breaks.
                     
-                    **The Pitfall:** An HR department can be highly efficient (filling jobs fast and cheap) while being deeply ineffective (hiring poor fits who leave within six months).
-                    
-                    *Socratic Follow-Up Question:* Can you identify an HR metric currently used in your organization that measures efficiency, but fails to measure effectiveness?
+                    *Socratic Reflection Question:* Can you convert one raw measure currently reported in your department into an evaluative metric?
                     """
-                elif "vrio" in query_low or "barney" in query_low or "rbv" in query_low:
-                    tutor_response = """
-                    **Unit 1 Tutor Response:**
+                elif "level" in q_low or "maturity" in q_low or "transition" in q_low:
+                    ans = """
+                    **Unit 1 Socratic Tutor:**
                     
-                    Barney’s **Resource-Based View (RBV)** states that competitive advantage comes from resources that are **Valuable, Rare, Inimitable, and Organised (VRIO)**:
+                    Transitioning up the **HR Analytics Maturity Model** (Section 1.5.3) requires a deliberate shift:
                     
-                    * **Standard HR Processes are NOT Inimitable:** Any competitor can buy the same HR software or copy a recruitment advertisement.
-                    * **Culture & Capability ARE Inimitable:** High psychological safety, deep team trust, and specialized organizational routines are socially complex and impossible to copy easily.
+                    * **Level 1 → Level 2:** Eliminate manual processing errors, establish standard definitions, and implement an HRIS dashboard.
+                    * **Level 2 → Level 3:** Stop looking at metrics in isolation; join payroll, attendance, and performance tables using a universal Employee ID to answer *why* problems occur.
+                    * **Level 3 → Level 4:** Apply multivariate regression and machine learning to project trends forward and prescribe proactive interventions before resignations occur.
                     
-                    **Analytics Takeaway:** Metrics must evaluate whether your talent management practices are creating unique capabilities, rather than just tracking standardized process compliance.
-                    
-                    *Socratic Follow-Up Question:* What capability within your workforce would you classify as truly 'Inimitable' by competitors?
+                    *Socratic Reflection Question:* What is the primary data governance constraint holding your organisation at its current maturity level?
                     """
                 else:
-                    tutor_response = f"""
-                    **Unit 1 Tutor Response:**
+                    ans = f"""
+                    **Unit 1 Socratic Tutor:**
                     
                     Thank you for your inquiry regarding **"{user_tutor_query}"**. 
                     
-                    In the context of **Unit 1: Foundations & Human Capital Value Chain Architecture**, keep these three core principles in mind:
-                    1. Always map metrics back to the 4-stage causal chain (Input → Process → Capability → Outcome).
-                    2. Avoid relying solely on administrative efficiency metrics; ensure effectiveness and business impact are measured.
-                    3. Ensure human capital analytics support workplace dignity, psychological safety, and sustainable flourishing.
+                    In **Unit 1: Foundations of Strategic HRM, eHRM and the Value Chain**, keep these core principles in mind:
+                    1. Always map HR practices back to the 3-stage value chain (GET → DEVELOP & KEEP → ENGAGE).
+                    2. Move away from raw measures to evaluative metrics and predictive foresight.
+                    3. Ensure all analytics align with POPIA privacy rules, data integrity, and ethical employee stewardship.
                     
-                    *Socratic Follow-Up Question:* How does your question relate to connecting HR practices directly to strategic business performance?
+                    *Socratic Reflection Question:* How does this concept support shifting HR from an administrative cost centre to a strategic business partner?
                     """
 
-                st.session_state.tutor_history.append({"user": user_tutor_query, "tutor": tutor_response})
+                st.session_state.tutor_history.append({"user": user_tutor_query, "tutor": ans})
 
         if st.session_state.tutor_history:
             st.markdown("---")
@@ -375,6 +498,43 @@ elif selected_unit == "Unit 1: Foundations & Human Capital Value Chain":
             for chat in reversed(st.session_state.tutor_history):
                 st.markdown(f"**🙋‍♂️ Delegate Question:** {chat['user']}")
                 st.info(chat['tutor'])
+
+    # --------------------------------------------------------------------------
+    # TAB 7: FORMATIVE ASSESSMENT CHECKPOINT (SECTION 1.8)
+    # --------------------------------------------------------------------------
+    with tab_checkpoint:
+        st.subheader("1.8 Formative Assessment Checkpoint")
+        st.markdown("""
+        <div class="card">
+        <h4>Self-Assessment Task</h4>
+        Draft a 300-word executive pitch for a proposed HR analytics project in your organisation (or simulated enterprise).<br><br>
+        <b>Required Criteria:</b>
+        <ol>
+            <li>Explicitly integrate at least two <b>Best Practice Principles</b> (e.g., Line-of-sight alignment, Evidence-based decision making).</li>
+            <li>Acknowledge at least one major <b>Operational Constraint</b> (e.g., Characterisation deficits, System tools) with a clear mitigation plan.</li>
+            <li>Reference your organisation's current position on the <b>HR Analytics Maturity Model</b> and how the project advances maturity.</li>
+        </ol>
+        </div>
+        """, unsafe_allow_html=True)
+
+        pitch_text = st.text_area("Draft your 300-word Executive Pitch here:", height=200)
+        
+        if st.button("Submit Pitch for Formative Review"):
+            word_count = len(pitch_text.split())
+            if word_count < 50:
+                st.warning(f"⚠️ Submission too brief ({word_count} words). Please expand your pitch to address all required criteria.")
+            else:
+                st.success(f" Pitch submitted successfully ({word_count} words)! Reviewing against Section 1.8 assessment criteria...")
+                
+                # Check criteria
+                has_principles = "alignment" in pitch_text.lower() or "evidence" in pitch_text.lower() or "governance" in pitch_text.lower()
+                has_constraints = "constraint" in pitch_text.lower() or "data" in pitch_text.lower() or "system" in pitch_text.lower()
+                has_maturity = "level" in pitch_text.lower() or "maturity" in pitch_text.lower()
+                
+                st.markdown("#### Formative Criteria Check:")
+                st.write(f"• **Best Practice Principles Included:** {'✅ Yes' if has_principles else '❌ Missing explicit reference'}")
+                st.write(f"• **Operational Constraints & Mitigation:** {'✅ Yes' if has_constraints else '❌ Missing explicit reference'}")
+                st.write(f"• **Maturity Model Level Referenced:** {'✅ Yes' if has_maturity else '❌ Missing explicit reference'}")
 
 # ------------------------------------------------------------------------------
 # UNIT 2: STRATEGIC HR METRICS & CALCULATORS
