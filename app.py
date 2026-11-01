@@ -1,3 +1,105 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+import plotly.express as px
+
+# ==============================================================================
+# 1. PAGE CONFIGURATION & STYLING (Top of File)
+# ==============================================================================
+st.set_page_config(
+    page_title="HR Metrics & Analytics SLP Portal",
+    page_icon="📊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Custom Academic Theme
+st.markdown("""
+    <style>
+    .main-header { font-size: 2.2rem; font-weight: 700; color: #002B49; margin-bottom: 0px; }
+    .sub-header { font-size: 1.1rem; color: #555555; margin-bottom: 20px; }
+    .card { background-color: #F8F9FA; border-left: 5px solid #002B49; padding: 18px; border-radius: 6px; margin-bottom: 20px; }
+    .academic-box { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-left: 4px solid #0284C7; padding: 16px; border-radius: 6px; margin-bottom: 15px; }
+    </style>
+""", unsafe_allow_html=True)
+
+# Main Application Title
+st.markdown('<p class="main-header">📊 HR Metrics and Analytics: Advanced Applied Analytics and Workforce Diagnostics</p>', unsafe_allow_html=True)
+st.markdown('<p class="sub-header">Nelson Mandela University | Faculty of Business and Economic Sciences | School of Industrial Psychology and HR Management</p>', unsafe_allow_html=True)
+st.markdown("---")
+
+# ==============================================================================
+# 2. SESSION STATE INITIALISATION
+# ==============================================================================
+if "tutor_history" not in st.session_state:
+    st.session_state.tutor_history = []
+if "general_chat_history" not in st.session_state:
+    st.session_state.general_chat_history = []
+
+# ==============================================================================
+# 3. SIDEBAR NAVIGATION (MUST COME BEFORE ANY IF STATEMENTS)
+# ==============================================================================
+st.sidebar.title("Programme Navigation")
+st.sidebar.markdown("**Short Learning Programme Units**")
+
+selected_unit = st.sidebar.radio(
+    "Navigate to:",
+    [
+        "Programme Course Outline & Overview",
+        "Unit 1: Foundations of Strategic HRM, eHRM and the Value Chain",
+        "Unit 2: Data Architecture, Sources and Governance",
+        "Unit 3: Strategic Partnering, Balanced Scorecards, and Dashboards",
+        "Unit 4: HRM Practice Indices, Diagnostics and Predictive Modelling",
+        "Unit 5: Operationalising the HR Analytics Cycle",
+        "Annexures & Case Studies",
+        "Interactive AI Assistant & Socratic Tutor"
+    ]
+)
+
+st.sidebar.markdown("---")
+st.sidebar.info("🎓 **School of Industrial Psychology & Human Resource Management**\nNelson Mandela University")
+
+# ==============================================================================
+# 4. MODULE PAGES (THIS IS WHERE selected_unit IS USED)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# PROGRAMME OVERVIEW & COURSE OUTLINE
+# ------------------------------------------------------------------------------
+if selected_unit == "Programme Course Outline & Overview":
+    st.header("Course Outline & Programme Overview")
+    st.caption("Nelson Mandela University | Faculty of Business and Economic Sciences")
+    st.markdown("---")
+    
+    st.markdown("""
+    <div class="card">
+    <h4>Programme Purpose & Target Audience</h4>
+    <b>SLP Title:</b> HR Metrics and Analytics: Advanced Applied Analytics and Workforce Diagnostics<br>
+    <b>Programme Type:</b> Short Learning Programme, offered as a standalone professional certification for industry practitioners.<br>
+    <b>Target Audience:</b> Working HR Practitioners, Line Managers, and Organisational Leaders seeking to build advanced competencies in workforce analytics.<br>
+    <b>Prerequisites:</b> An Advanced Diploma or Degree or an equivalent qualification; or relevant workplace experience.<br><br>
+    <b>Purpose:</b> To enable participants to use HR metrics and analytics as a diagnostic tool for operational and strategic decision-making, thereby optimising organisational human capital investments and shifting the HRM function from an administrative role to a strategic business partner.
+    </div>
+    """, unsafe_allow_html=True)
+    
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric(label="Total Units", value="5 Core Units")
+    col2.metric(label="Programme Type", value="Standalone Certification")
+    col3.metric(label="Assessment", value="Formative & Diagnostic")
+    col4.metric(label="School", value="IOP & HRM")
+
+# ------------------------------------------------------------------------------
+# UNIT 1: FOUNDATIONS OF STRATEGIC HRM, eHRM AND THE VALUE CHAIN
+# ------------------------------------------------------------------------------
+elif selected_unit == "Unit 1: Foundations of Strategic HRM, eHRM and the Value Chain":
+    st.header("Unit 1: Foundations of Strategic HRM, eHRM and the Value Chain")
+    st.caption("Official Nelson Mandela University SLP Learner Guide & Interactive Diagnostic Workbench")
+    # [Unit 1 tabs and code sit here...]
+
+# ------------------------------------------------------------------------------
+# OTHER UNITS FOLLOW BELOW (Unit 2, Unit 3, Unit 4, Unit 5, Annexures, Assistant)
+# ------------------------------------------------------------------------------
+
 
 # ------------------------------------------------------------------------------
 # PROGRAMME OVERVIEW & COURSE OUTLINE
